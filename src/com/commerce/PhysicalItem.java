@@ -37,12 +37,14 @@ public class PhysicalItem extends Item {
     }
     @Override
     public double tax(){
-        double tax = (getPrice() + shippingCost()) * getTaxRate();
+        double tax=super.tax();
+        tax = (getPrice() + shippingCost()) * getTaxRate();
         return tax;
     }
     @Override
     public double totalPrice(){
-        return tax() + getPrice() + shippingCost();
+        double totalPrice=super.totalPrice();
+        totalPrice = getPrice() + shippingCost() + tax();
+        return totalPrice;
     }
-
 }

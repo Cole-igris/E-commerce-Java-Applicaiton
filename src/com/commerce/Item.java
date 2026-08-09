@@ -54,6 +54,7 @@ public class Item {
     public double totalPrice(){
         return 0.0;
     }
+    public String link(){return "none";}
     /*price,tax, and shipping functions will never be used by the item(parent) class but to allow polymorphism
     these methods must exist first in the parents class then override in child ones*/
 
