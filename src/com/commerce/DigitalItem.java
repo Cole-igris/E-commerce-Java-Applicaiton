@@ -23,7 +23,7 @@ public class DigitalItem extends Item {
 
     //methods
     @Override
-    public double tax(){
+    public double tax(){//super is used to extend the behavior of the parent class not to enable polymorphism
         double tax=this.getPrice() * this.getTaxRate();
         return tax;
     }
@@ -33,14 +33,12 @@ public class DigitalItem extends Item {
     }
     @Override
     public double totalPrice(){
-        double totalPrice=super.totalPrice();
-        totalPrice=getPrice() + tax();
+        double totalPrice=getPrice() + tax();
         return totalPrice;
     }
     @Override
     public String link(){
-        String link=super.link();
-        link="https://"+getName()+".lynstack:445";
+        String link="https://"+getName()+".lynstack:445";
         return link;
     }
 }

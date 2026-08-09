@@ -6,7 +6,6 @@ public class Ecommerce {
         System.out.println("Shipping Cost: "+a.shippingCost());
         System.out.println("tax: "+a.tax());
         System.out.println("Total Price: "+a.totalPrice());
-
     }
 
 }
