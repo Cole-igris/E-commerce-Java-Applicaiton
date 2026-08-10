@@ -1,25 +1,25 @@
 package com.commerce;
 
 public class DigitalItem extends Item {
-    private String link;
+    private double fileSize;
 
     //parameterized const
-    public DigitalItem(String name,double price,int stockQuantity, double taxRate,double size){
-        super(name, price, stockQuantity,taxRate,size);
-        setType("Digital");
+    public DigitalItem(String name,double price,int stockQuantity, double taxRate, double filesize){
+        super(name, price, stockQuantity,taxRate);
+        this.fileSize=filesize;
     }
 
     //default
     public DigitalItem(){
         super();
-        this.link="none";
+        this.fileSize=0.0;
     }
 
     //getters
-    public String getLink(){return this.link;}
+    public double getFileSize(){return this.fileSize;}
 
     //setters
-    public void setLink(String link) {this.link = link;}
+    public void setFileSize(double fileSize) {this.fileSize = fileSize;}
 
     //methods
     @Override
@@ -38,7 +38,7 @@ public class DigitalItem extends Item {
     }
     @Override
     public String link(){
-        String link="https://"+getName()+"lynstack.org:445";
+        String link="https://"+getName()+".lynstack:445";
         return link;
     }
 }
