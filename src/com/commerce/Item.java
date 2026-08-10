@@ -1,6 +1,6 @@
 package com.commerce;
 
-public class Item {
+abstract class Item {
     private String name;
     private double price;
     private int stockQuantity;
@@ -24,7 +24,7 @@ public class Item {
         setPrice(price);
         setStockQuantity(stockQuantity);
         setTaxRate(taxRate);
-        setWeight(size);
+        setSize(size);
     }//this approach ensures we keep the controlled validation logic of the setter
     //getters
     public String getName(){return this.name;}
@@ -50,8 +50,8 @@ public class Item {
         else throw new IllegalArgumentException("Tax Rate can't be initially 0 or negative");
     }
     public void setType(String type){this.type=type;}
-    public void setSize(double weight){
-        if(weight>0) this.size=sizee;
+    public void setSize(double size){
+        if(size>0) this.size=size;
         else throw new IllegalArgumentException("weight can't be negative or equal to 0");
     }
 
@@ -59,14 +59,10 @@ public class Item {
     public void display(){
         System.out.println("p");
     }
-    public double tax(){
-        return 0;
-    }
-    public double shippingCost(){return 0;}
-    public double totalPrice(){
-        return 0.0;
-    }
-    public String link(){return "none";}
+    abstract double tax();
+    abstract double shippingCost();
+    abstract double totalPrice();
+    abstract String link();
     /*price,tax, and shipping functions will never be used by the item(parent) class but to allow polymorphism
     these methods must exist first in the parents class then override in child ones*/
 

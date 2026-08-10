@@ -25,8 +25,7 @@ public class PhysicalItem extends Item {
     //methods
     @Override
     public double shippingCost(){
-        double shippingCost=super.shippingCost();
-        shippingCost= getSize() * shippingRate;
+        double shippingCost= getSize() * shippingRate;
         return shippingCost;
     }
     @Override
@@ -39,4 +38,6 @@ public class PhysicalItem extends Item {
         double totalPrice = getPrice() + shippingCost() + tax();
         return totalPrice;
     }
+    @Override
+    public String link(){return "none";}
 }

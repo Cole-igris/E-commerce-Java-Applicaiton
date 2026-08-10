@@ -29,7 +29,7 @@ public class DigitalItem extends Item {
     }
     @Override
     public double shippingCost(){
-        return super.shippingCost();
+        return 0.0;
     }
     @Override
     public double totalPrice(){
